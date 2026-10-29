@@ -223,7 +223,7 @@ public final class Wayliths extends JavaPlugin {
         Map<String, String> placeholders = placeholder != null && value != null
                 ? Map.of(placeholder, value)
                 : Map.of();
-        return getLangMessage(path, placeholders, false);
+        return getLangMessageWithoutPrefix(path, placeholders);
     }
 
     public Component getLangMessageWithoutPrefix(String path, Map<String, String> placeholders) {

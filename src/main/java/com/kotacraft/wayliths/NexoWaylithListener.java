@@ -23,7 +23,7 @@ public final class NexoWaylithListener implements Listener {
         if (!manager.isWaylithBlock(location)) return;
 
         event.setDrop(Drop.emptyDrop());
-        plugin.getWaylithListener().handleWaylithBreak(location, event.getPlayer(), false, true);
+        plugin.getWaylithListener().handleWaylithBreak(location, event.getPlayer(), false);
     }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -32,6 +32,6 @@ public final class NexoWaylithListener implements Listener {
         if (!manager.isWaylithBlock(location)) return;
 
         event.setDrop(Drop.emptyDrop());
-        plugin.getWaylithListener().handleWaylithBreak(location, event.getPlayer(), false, true);
+        plugin.getWaylithListener().handleWaylithBreak(location, event.getPlayer(), false);
     }
 }

@@ -112,7 +112,6 @@ public class WaylithListener implements Listener {
         return highestLimit;
     }
 
-    @SuppressWarnings("deprecation")
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         if (isWaylithItem(event.getItemInHand())) {
@@ -558,10 +557,10 @@ public class WaylithListener implements Listener {
             if (filter.equals("personal")) {
                 if (visibility != WaylithVisibility.PRIVATE || !manager.getOwner(key).equalsIgnoreCase(player.getName()))
                     return;
-            } else if (!manager.canSee(key, player.getName(), admin)) {
-                return;
+                waylithEntries.add(Map.entry(key, name));
+            } else if (manager.canSee(key, player.getName(), admin)) {
+                waylithEntries.add(Map.entry(key, name));
             }
-            waylithEntries.add(Map.entry(key, name));
         });
 
         String sortMode = playerSortModes.getOrDefault(player.getUniqueId(), "a_z");
@@ -813,7 +812,9 @@ public class WaylithListener implements Listener {
 
     private void travelToWaylith(Player player, String key) {
         boolean consumeScroll = usedWaylithScroll.remove(player.getUniqueId());
-        if (!manager.waylithExists(key) || !manager.canSee(key, player.getName(), player.hasPermission("wayliths.admin"))) {
+        boolean available = manager.waylithExists(key)
+                && manager.canSee(key, player.getName(), player.hasPermission("wayliths.admin"));
+        if (!available) {
             player.sendMessage(plugin.getLangMessage("waylith-unavailable", null, null));
             return;
         }
@@ -854,6 +855,7 @@ public class WaylithListener implements Listener {
     }
 
     private ActionButton waylithDialogButton(Component label, Component tooltip, String action) {
+        //noinspection PatternValidation
         ActionButton.Builder button = ActionButton.builder(label
                         .colorIfAbsent(NamedTextColor.WHITE)
                         .decoration(TextDecoration.ITALIC, false))
@@ -982,15 +984,15 @@ public class WaylithListener implements Listener {
 
             debug("-> Confirmed block is a Waylith structure!");
             event.setCancelled(true);
-            handleWaylithBreak(block.getLocation(), event.getPlayer(), true, true);
+            handleWaylithBreak(block.getLocation(), event.getPlayer(), true);
         } else {
             debug("-> Block Break ignored: Not registered as a Waylith block.");
         }
     }
 
-    void handleWaylithBreak(Location blockLocation, Player player, boolean clearBlock, boolean playPluginBreakSound) {
+    void handleWaylithBreak(Location blockLocation, Player player, boolean clearBlock) {
         Location centerLoc = blockLocation.clone().add(0.5, 0.5, 0.5);
-        if (playPluginBreakSound && plugin.getConfig().getBoolean("waylith-effects.break-sound-enabled", true)) {
+        if (plugin.getConfig().getBoolean("waylith-effects.break-sound-enabled", true)) {
             centerLoc.getWorld().playSound(centerLoc,
                     getConfiguredSound("waylith-effects.break-sound", "block.beacon.deactivate",
                             org.bukkit.Sound.BLOCK_BEACON_DEACTIVATE),

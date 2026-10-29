@@ -226,7 +226,6 @@ public final class TpaManager implements Listener {
         }
         ActionButton closeButton = dialogButton(
                 plugin.getLangMessageWithoutPrefix("tpa-dialog-close", null, null),
-                null,
                 tpaAction("close"));
 
         DialogBase base = DialogBase.builder(plugin.getLangMessageWithoutPrefix(
@@ -241,8 +240,8 @@ public final class TpaManager implements Listener {
         viewer.showDialog(dialog);
     }
 
-    private ActionButton dialogButton(Component label, Component tooltip, Key action) {
-        return dialogButton(label, tooltip, action, 150);
+    private ActionButton dialogButton(Component label, Key action) {
+        return dialogButton(label, null, action, 150);
     }
 
     private ActionButton dialogButton(Component label, Component tooltip, Key action, int width) {
@@ -254,6 +253,7 @@ public final class TpaManager implements Listener {
     }
 
     private Key tpaAction(String action) {
+        //noinspection PatternValidation
         return Key.key("wayliths", "tpa/" + action);
     }
 
