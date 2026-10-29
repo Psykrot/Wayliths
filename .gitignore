@@ -4,5 +4,4 @@
 *.iws
 *.iml
 *.ipr
-/.gradle/buildOutputCleanup/
-/.gradle/9.4.0/
+
