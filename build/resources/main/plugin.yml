@@ -1,0 +1,26 @@
+name: Wayliths
+version: 1.0
+main: com.kotacraft.wayliths.Wayliths
+api-version: 1.20
+softdepend: [Nexo]
+commands:
+  wayliths:
+    description: Main Wayliths command
+    usage: /<command> [reload|give <bed_scroll|waylith_scroll|tpa_scroll|waylith_block> [player]]
+
+permissions:
+  wayliths.admin:
+    description: Gives full access to Wayliths admin commands (reload and item distribution)
+    default: op
+
+  wayliths.visibility.server:
+    description: Allows setting editable Wayliths to Server ownership
+    default: false
+
+  wayliths.limit.*:
+    description: Allows an unlimited number of Waylith placements
+    default: op
+
+  wayliths.limit.<amount>:
+    description: Sets a custom Waylith placement limit for a player (e.g. wayliths.limit.5)
+    default: false

@@ -1,0 +1,182 @@
+# Language file for Wayliths.
+# Text values support MiniMessage formatting, including colors, gradients, and styles.
+# Keep the keys unchanged; edit their values to customize the plugin's text.
+
+# Shared prefix
+# Used by messages containing <prefix>. The prefix itself can also be edited here.
+prefix: "<gradient:#840cc4:#c901c8>[Wayliths]</gradient> "
+
+# Commands and general item feedback
+# Messages for reload permissions and disabled items.
+reload-success: "<prefix><green>Reloaded successfully</green>"
+no-permission: "<prefix><red>You can't use this command</red>"
+item-disabled: "<prefix><red>This item is disabled</red>"
+
+# Waylith creation, editing, and placement
+# {name} is the Waylith name; {visibility} is filled from the visibility labels below.
+waylith-created: "<prefix><gray>Created '<gradient:#840cc4:#c901c8>{name}</gradient>'</gray>"
+waylith-exists: "<prefix><red>That Waylith already exists</red>"
+waylith-renamed: "<prefix><gray>Renamed to '<gradient:#840cc4:#c901c8>{name}</gradient>'</gray>"
+waylith-removed: "<prefix><gray>Waylith removed from network</gray>"
+waylith-visibility-updated: "<prefix><gray>Waylith visibility set to <gold>{visibility}</gold></gray>"
+waylith-visibility-public: "Global"
+waylith-visibility-private: "Private"
+waylith-visibility-server: "Server"
+waylith-placement-disabled: "<prefix><red>You don't have permissions to place Wayliths</red>"
+waylith-limit-reached: "<prefix><red>Waylith limit reached</red>"
+waylith-name-dialog-title: "<gradient:#840cc4:#c901c8>Name your Waylith</gradient>"
+waylith-name-dialog-input: "Waylith name"
+waylith-name-dialog-save: "<white>Save</white>"
+waylith-name-dialog-cancel: "<white>Cancel</white>"
+waylith-name-dialog-invalid: "<prefix><red>Couldn't read that name. Please try again.</red>"
+waylith-name-dialog-empty: "<prefix><red>A Waylith name can't be empty.</red>"
+
+# Waylith network dialog
+# These values customize the network dialog, waypoint tooltips, and filter/sort buttons.
+# {name} is the displayed Waylith name; {owner} is its owner; {visibility} is its visibility.
+# Lore values are lists: add another "- \"...\"" entry to display another line.
+gui-title: "<gradient:#840cc4:#c901c8>Waylith Network</gradient>"
+gui-close: "<white>Close</white>"
+waylith-dialog-page: "<gray>Page {page}</gray>"
+waylith-dialog-empty: "<gray>No Wayliths match this filter.</gray>"
+waylith-dialog-edit-description: "<gray>Manage <white>{name}</white></gray>"
+waylith-unavailable: "<prefix><red>That Waylith is no longer available</red>"
+waylith-gui-entry-lore:
+  - "<gray>Visibility: <white>{visibility}</white></gray>"
+  - "<gray>Owner: <white>{owner}</white></gray>"
+  - ""
+  - "<gray>Click to travel</gray>"
+waylith-gui-entry-name: "<white>{name}</white>"
+waylith-gui-filter-all: "All Waypoints"
+waylith-gui-filter-personal: "Your Waypoints"
+waylith-gui-filter-button: "<white>Filter: <bold><gold>{filter}</gold></bold></white>"
+waylith-gui-filter-lore:
+  - "<gray>Cycle Waylith filter</gray>"
+waylith-gui-sort-name-ascending: "Name (A-Z)"
+waylith-gui-sort-name-descending: "Name (Z-A)"
+waylith-gui-sort-button: "<white>Sort Mode: <bold><gold>{sort}</gold></bold></white>"
+waylith-gui-sort-lore:
+  - "<gray>Cycle name sorting</gray>"
+
+# Waylith edit dialog
+# Text for the menu title and its visibility and rename controls.
+# {visibility} is filled with waylith-visibility-public or waylith-visibility-private.
+waylith-edit-gui-title: "<gradient:#840cc4:#c901c8>Edit Waylith</gradient>"
+waylith-edit-button: "<white>Edit Waylith</white>"
+waylith-edit-button-lore:
+  - "<gray>Edit this Waylith</gray>"
+waylith-edit-type: "<white>Visibility: <gold>{visibility}</gold></white>"
+waylith-edit-type-lore:
+  private:
+    - "<gray>Only visible to you</gray>"
+    - ""
+    - "<gray>Click to change visibility</gray>"
+  public:
+    - "<gray>Visible to everyone</gray>"
+    - ""
+    - "<gray>Click to change visibility</gray>"
+  server:
+    - "<gray>Visible to everyone</gray>"
+    - "<gray>Owner: Server</gray>"
+    - ""
+    - "<gray>Click to change visibility</gray>"
+waylith-edit-rename: "<white>Name: <gold>{name}</gold></white>"
+waylith-edit-rename-lore:
+  - "<gray>Current Name: <white>{name}</white></gray>"
+  - ""
+  - "<gray>Click to rename</gray>"
+
+# Shared GUI navigation
+# Labels used on page arrows and the back button in plugin menus.
+gui-previous-page: "<white><bold>Previous Page</bold></white>"
+gui-next-page: "<white><bold>Next Page</bold></white>"
+gui-back: "<white>Back</white>"
+
+# Teleport feedback
+# {name} is a Waylith name; {seconds} is the remaining countdown or cooldown duration.
+waylith-teleport: "<prefix><gray>Warped to <gradient:#840cc4:#c901c8>{name}</gradient></gray>"
+teleport-countdown: "<prefix><gray>Teleporting in <gold>{seconds}s</gold>...</gray>"
+teleport-cooldown: "<prefix><red>Wait <gold>{seconds}s</gold> to teleport again</red>"
+teleport-already-counting: "<prefix><red>Teleport already pending</red>"
+teleport-failed: "<prefix><red>Teleport failed. Try again</red>"
+teleport-cancelled: "<prefix><red>Teleport cancelled: you moved</red>"
+bed-scroll-teleport: "<prefix><gray>Warped to your bed</gray>"
+bed-scroll-missing: "<prefix><red>Bed spawn missing or blocked</red>"
+
+# Scroll and Waylith item names and lore
+# These values customize the display name and each lore line of items created by the plugin.
+items:
+  waylith_block:
+    name: "<gradient:#840cc4:#c901c8>Waylith Block</gradient>"
+    lore:
+      - "<blue>Furniture</blue>"
+      - ""
+      - "<gray>Acts as a permanent</gray>"
+      - "<gray>network waypoint</gray>"
+      - "<dark_gray>Placed as a block</dark_gray>"
+      - "<blue>Place to deploy</blue>"
+  waylith_scroll:
+    name: "<gradient:#840cc4:#c901c8>Waylith Scroll</gradient>"
+    lore:
+      - "<blue>Tools & Utilities</blue>"
+      - ""
+      - "<gray>Opens the network</gray>"
+      - "<gray>of saved waypoints</gray>"
+      - "<dark_gray>Consumed on use</dark_gray>"
+      - "<blue>Right-click to use</blue>"
+  bed_scroll:
+    name: "<gradient:#e2011d:#ff6e7d>Bed Scroll</gradient>"
+    lore:
+      - "<blue>Tools & Utilities</blue>"
+      - ""
+      - "<gray>Teleports you safely</gray>"
+      - "<gray>to your bed spawn</gray>"
+      - "<dark_gray>Consumed on use</dark_gray>"
+      - "<blue>Right-click to use</blue>"
+  tpa_scroll:
+    name: "<gradient:#feb524:#fed275>TPA Scroll</gradient>"
+    lore:
+      - "<blue>Tools & Utilities</blue>"
+      - ""
+      - "<gray>Request to teleport</gray>"
+      - "<gray>to another player</gray>"
+      - "<dark_gray>Consumed on use</dark_gray>"
+      - "<blue>Right-click to browse</blue>"
+
+# Give command confirmations
+# {item} is the item name, {amount} is its quantity, and {player} is the sender/recipient.
+give-received: "<prefix><gray>You have received <gold>{item}</gold> <gold>x{amount}</gold> from <gold>{player}</gold></gray>"
+give-sent: "<prefix><gray>You have given <gold>{item}</gold> <gold>x{amount}</gold> to <gold>{player}</gold></gray>"
+
+# TPA player-selection dialogs
+# {player} is a selected player's name; {sort} is the current sorting mode; {page} is the current page.
+tpa-dialog-title: "<gradient:#840cc4:#c901c8>Send TPA Request</gradient>"
+tpa-dialog-player-tooltip: "<gray>Click to send a teleport request to </gray>"
+tpa-dialog-page: "<gray>Page {page}</gray>"
+tpa-dialog-empty: "<gray>No other players are online.</gray>"
+tpa-dialog-sort-button: "<white>Sort Mode: <gold><bold>{sort}</bold></gold></white>"
+tpa-dialog-sort-tooltip: "<gray>Click to cycle player sorting</gray>"
+tpa-dialog-close: "<white>Close</white>"
+tpa-dialog-sort-alphabetical: "Alphabetical (A-Z)"
+tpa-dialog-sort-same-world: "Same World First"
+tpa-dialog-sort-nearby: "Nearest First"
+
+# TPA request messages and response controls
+# {player} is the other player involved in the request.
+tpa-request-approve-button: "<green><bold>- [Click to Approve]</bold></green>"
+tpa-request-deny-button: "<red><bold>- [Click to Deny]</bold></red>"
+tpa-request-sent: "<prefix><gray>TPA Request sent to <gold>{player}</gold></gray>"
+tpa-request-received: "<prefix><gold>{player}</gold><gray> wants to teleport to you</gray>"
+tpa-request-approved: "<prefix><gray>Your request was approved by <gold>{player}</gold></gray>"
+tpa-teleport-completed: "<prefix><gray>Teleported to <gold>{player}</gold></gray>"
+tpa-request-denied: "<prefix><red>Your request to {player} was denied</red>"
+tpa-approved: "<prefix><gray>Approved <gold>{player}</gold>'s request</gray>"
+tpa-denied: "<prefix><gray>Denied <gold>{player}'s</gold> request</gray>"
+tpa-request-expired: "<prefix><red>TPA request expired</red>"
+tpa-already-pending: "<prefix><red>You already have a pending request</red>"
+tpa-target-busy: "<prefix><red>{player} has a pending request</red>"
+tpa-player-offline: "<prefix><red>Player is offline</red>"
+tpa-scroll-required: "<prefix><red>You need a TPA Scroll</red>"
+tpa-target-offline: "<prefix><red>Request cancelled: player went offline</red>"
+tpa-requester-offline: "<prefix><red>Requester is offline</red>"
+tpa-teleport-unavailable: "<prefix><red>{player} can't teleport now</red>"
