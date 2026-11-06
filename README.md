@@ -17,10 +17,6 @@ A recognizable Waystone function remade into a modern Paper plugin format.
 
 <br/>
 
-<img src="https://i.imgur.com/HrPU7fL.gif" alt="Waylith Demo" width="80%">
-
-<br/><br/>
-
 Wayliths brings a convenient, configurable teleportation network to your Minecraft server in a format that is instantly recognized by long-time modded Minecraft players. Create custom destinations, travel fluidly across the network, share locations with others, and instantly return to your respawn points.
 
 <br/>
