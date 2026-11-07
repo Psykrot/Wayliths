@@ -7,7 +7,7 @@ A recognizable Waystone function remade into a modern Paper plugin format.
 <br/>
 
 <a href="https://www.curseforge.com/minecraft/bukkit-plugins/wayliths"><img src="https://i.imgur.com/5JIaji2.png" alt="CurseForge" width="40" height="40"></a>
-<a href="#"><img src="https://i.imgur.com/8qijsZK.png" alt="Modrinth" width="40" height="40"></a>
+<a href="https://modrinth.com/plugin/wayliths"><img src="https://i.imgur.com/8qijsZK.png" alt="Modrinth" width="40" height="40"></a>
 <a href="https://github.com/Psykrot/Wayliths"><img src="https://i.imgur.com/svexx5J.png" alt="GitHub" width="40" height="40"></a>
 <a href="https://discord.kotacraft.com/"><img src="https://i.imgur.com/KRHTNvT.png" alt="Discord" width="40" height="40"></a>
 
